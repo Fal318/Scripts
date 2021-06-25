@@ -13,10 +13,10 @@ autoconf-archive libleptonica-dev libtesseract-dev gphoto2 liblapacke-dev
 
 pip3 install numpy
 
-cd ~/
+cd "$HOME" || exit
 git clone --depth=1 https://github.com/opencv/opencv.git
 git clone --depth=1 https://github.com/opencv/opencv_contrib.git
-cd opencv && mkdir build && cd build
+cd opencv && mkdir build && cd ./build || exit
 
 CC=gcc-6 CXX=g++-6 cmake \
     -D CMAKE_BUILD_TYPE=RELEASE -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
@@ -39,7 +39,7 @@ CC=gcc-6 CXX=g++-6 cmake \
     -D CUDA_NVCC_FLAGS=--expt-relaxed-constexpr -D CUDA_FAST_MATH=ON -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda \
     -D CUDA_HOST_COMPILER=/usr/bin/gcc-6 -D PYTHON_DEFAULT_EXECUTABLE=python3  ..
 
-make -j $(nproc)
+make -j "$(nproc)"
 sudo make install
 
 

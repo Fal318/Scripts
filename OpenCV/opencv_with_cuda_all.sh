@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cd ~/
+cd "$HOME" || exit
 git clone --depth=1 https://github.com/opencv/opencv.git
 git clone --depth=1 https://github.com/opencv/opencv_contrib.git
-cd opencv && mkdir build && cd build
+cd opencv && mkdir build && cd build || exit
 
 CC=gcc-6 CXX=g++-6 cmake \
     -D CMAKE_BUILD_TYPE=RELEASE -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \

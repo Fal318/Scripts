@@ -2,10 +2,10 @@
 
 sudo apt install build-essential cmake checkinstall ccache \
 libgtk-3-dev libjpeg-dev libpng++-dev
-cd ~/
+cd "$HOME" || exit
 git clone --depth=1 https://github.com/opencv/opencv.git
-cd opencv/
-mkdir build && cd build
+cd opencv/ || exit
+mkdir build && cd build || exit
 cmake ..
-make -j($(nproc))
+make -j "$(nproc)"
 sudo make install

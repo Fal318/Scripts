@@ -11,7 +11,7 @@ sudo apt update
 
 sudo apt install cuda cuda-drivers
 
-sudo echo "export PATH=\"/usr/local/cuda/bin:$PATH\"
-export LD_LIBRARY_PATH=\"/usr/local/cuda/lib64:$LD_LIBRARY_PATH\"" >> ~/.bashrc
+echo "export PATH=\"/usr/local/cuda/bin:$PATH\"
+export LD_LIBRARY_PATH=\"/usr/local/cuda/lib64:$LD_LIBRARY_PATH\"" | sudo tee -a ~/.bashrc > /dev/null
 
 sudo reboot
