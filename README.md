@@ -1,6 +1,6 @@
 # Scripts
 
-# [packages_update_pip.sh](./pip/packages_update_pip.sh)
+# [packages_update_pip.sh](./basic/packages_update_pip.sh)
 
 If you run this script, you can update pip packages  to meet dependency.
 
